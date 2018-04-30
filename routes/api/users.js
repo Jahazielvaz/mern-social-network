@@ -6,5 +6,8 @@ const router = express.Router();
 //access: Public
 router.get('/test', (req, res) => res.json({msg: 'goodbye world'}))
 
+//route: GET api/users/register
+//description: z
+//access: Public
 
 module.exports = router;
