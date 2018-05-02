@@ -22,7 +22,7 @@ router.post('/register', (req, res) => {
         return res.status(400).json({email: 'Email already exists'})
       } else {
         const avatar = gravatar.url(req.body.email, {
-          s: 200, //Size
+          s: '200', //Size
           r: 'pg', //Rating
           d: 'mm' // Default
 
@@ -36,9 +36,10 @@ router.post('/register', (req, res) => {
 
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if(err) throw err;
+            if(err) {throw err};
             newUser.password = hash;
-            newUser.save()
+            newUser
+              .save()
               .then(user => res.json(user))
               .catch(console.log(err))
           })
