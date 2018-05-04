@@ -1,0 +1,6 @@
+TOKENS: When an email is validated, we're supposed to get a token back, which then allows us to access the content we want
+
+jwt.sign(): This is how you have jwt sign the token. It takes in the payload, which is what we want to include in the token. What we want to include is some user information. When that token gets sent to the server, you want to decode it. It needs to know what user it is.
+            We also want to send a secret (a key). We also want to add an expiration, if you want it to expire after a certain amount of time. In this payload you'll have non-sensitive user information, such as user ID
+
+BEARER: NOTE; the way that we format the tokens in the header, is by using the word bearer, which is a certain protocol.
