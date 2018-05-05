@@ -53,7 +53,7 @@ router.post('/register', (req, res) => {
 
 })
 
-//route: GET api/users/login
+//route: post api/users/login
 //description: Login User / REturning JWT Token
 //access: Private
 router.post('/login', (req, res) => {
